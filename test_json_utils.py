@@ -6,6 +6,11 @@ import json
 def make_game_library_from_json(json_data):
     #Initialize a new GameLibrary
     game_library = test_data.GameLibrary()
+    with open(json_data) as data_file:
+        jason = json.load(data_file)
+        for i in jason:
+            newGame = test_data.Game(i["title"],i["platform"],i["Year"])
+            game_library.add_game(newGame)
 
     #Loop through the json_data
         #Create a new Game object from the json_data by reading
@@ -14,6 +19,12 @@ def make_game_library_from_json(json_data):
         #  platform (which requires reading name and launch_year)
         #Add that Game object to the game_library
     #Return the completed game_library
+
+    #for i in json_data:
+        #newGame = test_data.Game(json_data[i]["title"], json_data[i]["platform"], json_data[i]["Year"])
+        #game_library.add_game(newGame)
+
+
 
     return game_library
 
@@ -34,3 +45,7 @@ else:
 #Load the json data from the input file
 #Use make_game_library_from_json(json_data) to convert the data to GameLibrary data
 #Print out the resulting GameLibrary data using print_game_library(game_library_data) in test_data.py
+
+
+fuq= make_game_library_from_json("wow.json")
+test_data.print_game_library(fuq)
