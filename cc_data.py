@@ -411,12 +411,12 @@ class CCLevel:
         lower_layer (int list): the lower layer data. this allows for objects to be placed under other objects
         optional_fields (list of CCField types): the fields that augment the data of this level. all levels have a title and a password
     """
-    def __init__(self):
-        self.level_number = -1
-        self.time = -1
-        self.num_chips = -1
-        self.upper_layer = []
-        self.lower_layer = []
+    def __init__(self, levelNum = -1, time = -1, chips = -1, upperLayer = [], lowerLayer = []):
+        self.level_number = levelNum
+        self.time = time
+        self.num_chips = chips
+        self.upper_layer = upperLayer
+        self.lower_layer = lowerLayer
         self.optional_fields = []
 
     def __str__(self):
@@ -443,7 +443,10 @@ class CCLevel:
         return return_str
 
     def add_field(self, field):
+        #print(field)
         self.optional_fields.append(field)
+        print(self.optional_fields)
+        #print(self.optional_fields[0])
 
 
 class CCDataFile:

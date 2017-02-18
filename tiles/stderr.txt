@@ -1,2 +1,4 @@
 cannot use cc-lynx.dac: chips.dat unavailable [series.c:531]
 cannot use cc-ms.dac: chips.dat unavailable [series.c:531]
+cannot use cc-lynx.dac: chips.dat unavailable [series.c:531]
+cannot use cc-ms.dac: chips.dat unavailable [series.c:531]
